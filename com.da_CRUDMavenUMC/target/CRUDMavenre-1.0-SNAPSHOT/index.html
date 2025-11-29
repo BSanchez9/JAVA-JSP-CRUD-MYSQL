@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhe Conosco</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #343a40;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        form label {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        form label input {
+            flex: 1;
+        }
+        .services, .booking, .deceased-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .booking form, .deceased-section form {
+            display: flex;
+            flex-direction: column;
+        }
+        .booking input, .booking select, .deceased-section input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+        .booking input[type="submit"], .deceased-section input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        .booking input[type="submit"]:hover, .deceased-section input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1em;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Trabalhe conosco</h1>
+    </header>
+    <div class="container">
+        <section id="booking" class="section booking">
+            <h2>Dados pessais</h2>
+            <p>Preencha os campos abaixo.</p>
+            <form action="candidato" method="post">
+                <label>
+                    <span>Nome</span>
+                    <input type="text" name="nome" placeholder="Nome Completo" required>
+                </label>
+                <label>
+                    <span>CPF</span>
+                    <input type="text" name="cpf" placeholder="CPF" minlength="11" maxlength="11" required>
+                </label>
+                <label>
+                    <span>Data de nascimento</span>
+                    <input type="date" name="nascimento" required>
+                </label>
+                <label>
+                    <span>Possui alguma deficiência ?</span>
+                    <select name="deficiencia" required>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Endereco</span>
+                    <input type="text" name="endereco" placeholder="Endereço" required>
+                </label>
+                <label>
+                    <span>Numero</span>
+                    <input type="number" name="numero" required>
+                </label>
+                <label>
+                    <span>CEP</span>
+                    <input type="number" name="cep" required>
+                </label>
+                <label>
+                    <span>Bairro</span>
+                    <input type="text" name="bairro" required>
+                </label>
+                <label>
+                    <span>Àrea de interesse</span>
+                    <input type="text" name="areaInteresse" required>
+                </label>
+                <input hidden name="op" value="CADASTRAR">
+                <input type="submit" value="Cadastrar">
+            </form>
+        </section>
+
+        <section id="deceased" class="section deceased-section">
+            <h2>Canditados Cadastrados</h2>
+            <form action="candidato" method="GET">
+                <input type="text" name="id" placeholder="ID do Candidato" required>
+                <input hidden name="op" value="CONSULTARBYID">
+                <input type="submit" value="Visualizar C por ID">
+            </form>
+            <form action="candidato" method="POST">
+                <input hidden name="op" value="CONSULTARTODOS">
+                <input type="submit" value="Visualizar todos os Candidatos">
+            </form>
+        </section>
+
+    </div>
+</body>
+</html>

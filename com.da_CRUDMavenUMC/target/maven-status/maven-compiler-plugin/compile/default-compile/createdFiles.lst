@@ -1,0 +1,4 @@
+com\da\crudmaven\dao\CandidatoDAO.class
+com\da\crudmaven\util\Conexao.class
+com\da\crudmaven\controller\CandidatoControle.class
+com\da\crudmaven\model\Candidato.class
