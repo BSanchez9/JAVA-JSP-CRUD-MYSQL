@@ -71,19 +71,13 @@ mvn clean install
 
 O arquivo `.war` será gerado no diretório `target/`.
 
-### 2. Implantação (Deploy)
-
-Copie o arquivo `CRUDMavenre-1.0-SNAPSHOT.war` (ou o nome gerado) para o diretório de implantação (`webapps/`) do seu servidor de aplicação (ex: Tomcat).
-
 ### 3. Acesso
 
 Após a implantação, a aplicação estará acessível em:
 
 ```
-http://localhost:8080/CRUDMavenre-1.0-SNAPSHOT/
+http://localhost:8080/
 ```
-(O nome exato do contexto pode variar dependendo do seu servidor e do nome do arquivo `.war`).
-
 O ponto de entrada inicial é o `index.html` ou o `CandidatoControle.java` (Servlet) que gerencia as requisições.
 
 ## 📂 Estrutura do Projeto
